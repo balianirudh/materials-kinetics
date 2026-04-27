@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PPREC version="1.0">
+
+<Header copyright="User">
+    <!-- Kinetic Database of PanPrecipitation for IN718 TTT Simulation -->
+    <!-- Matrix: FCC_A1 (gamma) -->
+    <!-- Precipitates: D022_NBNI3 (gamma''), D0A_NBNI3 (delta) -->
+    <Application name="PanPrecipitation" version="1.0" />
+</Header>
+
+  <Alloy name="IN718_KWN">
+
+    <MatrixPhase name="FCC_A1">
+
+      <ParameterTable type="kinetic" name="Parameters for gamma">
+        <!-- Using Standard Unit (SI) -->
+        <Parameter type="Molar_Volume" value="7.1E-6" description="Molar Volume" />
+      </ParameterTable >
+
+      <!-- gamma'' (D022_NBNI3): coherent, intragranular, low interfacial energy -->
+      <PrecipitatePhase name="D022_NBNI3" model="KWN" morphology="Sphere" nucleation="Modified_Homo" growth="Simplified">
+        <ParameterTable type="kinetic" name="Parameters for gamma_double_prime">
+          <!-- Using Standard Unit (SI) -->
+          <Parameter type="Molar_Volume" value="7.5E-6" description="Molar Volume" />
+          <Parameter type="Interfacial_Energy" value="0.025" description="Interfacial Energy" />
+          <Parameter type="Atomic_Spacing" value="3.60E-10" description="Atomic Spacing" />
+          <Parameter type="Nucleation_Site_Parameter" value="0.01" description="Nucleation Site Parameter" />
+          <Parameter type="Driving_Force_Factor" value="1.0" description="Driving Force Factor" />
+        </ParameterTable >
+      </PrecipitatePhase >
+
+      <!-- delta (D0A_NBNI3): incoherent, grain boundary, higher interfacial energy -->
+      <PrecipitatePhase name="D0A_NBNI3" model="KWN" morphology="Sphere" nucleation="Grain_Boundary" growth="Simplified">
+        <ParameterTable type="kinetic" name="Parameters for delta">
+          <!-- Using Standard Unit (SI) -->
+          <Parameter type="Molar_Volume" value="7.5E-6" description="Molar Volume" />
+          <Parameter type="Interfacial_Energy" value="0.3" description="Interfacial Energy" />
+          <Parameter type="Atomic_Spacing" value="3.60E-10" description="Atomic Spacing" />
+          <Parameter type="Nucleation_Site_Parameter" value="0.001" description="Nucleation Site Parameter" />
+          <Parameter type="Driving_Force_Factor" value="1.0" description="Driving Force Factor" />
+        </ParameterTable >
+      </PrecipitatePhase >
+
+    </MatrixPhase >
+
+  </Alloy >
+
+</PPREC>
